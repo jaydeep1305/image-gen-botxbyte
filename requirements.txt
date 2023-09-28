@@ -1,0 +1,8 @@
+flask
+loguru
+python-dotenv
+requests
+imagekitio
+pillow
+openai
+pebble

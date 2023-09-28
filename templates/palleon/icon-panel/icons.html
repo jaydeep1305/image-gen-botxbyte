@@ -1,0 +1,78 @@
+<!-- Icons START -->
+<div id="palleon-icons" class="palleon-icon-panel-content panel-hide">
+    <div class="palleon-tabs">
+        <!-- Icons Menu -->
+        <ul class="palleon-tabs-menu">
+            <li class="active" data-target="#palleon-all-icons">Icons</li>
+            <li id="palleon-custom-svg-open" data-target="#palleon-customsvg-upload">Custom SVG</li>
+        </ul>
+        <!-- All Icons -->
+        <div id="palleon-all-icons" class="palleon-tab active">
+            <div class="palleon-control-wrap" style="margin:0px;">
+                <label class="palleon-control-label">Icon Style</label>
+                <div class="palleon-control">
+                    <select id="palleon-icon-style" class="palleon-select" autocomplete="off">
+                        <option selected value="materialicons">Filled</option>
+                        <option value="materialiconsoutlined">Outlined</option>
+                        <option value="materialiconsround">Round</option>
+                    </select>
+                </div>
+            </div>
+            <hr />
+            <div class="palleon-search-wrap">
+                <input id="palleon-icon-search" type="search" class="palleon-form-field" placeholder="Enter a keyword..." autocomplete="off" />
+                <span id="palleon-icon-search-icon" class="material-icons">search</span>
+            </div>
+            <div id="palleon-icons-grid" class="palleon-grid palleon-elements-grid four-column">
+            </div>
+            <div id="palleon-noicons" class="notice notice-warning">Nothing found.</div>
+        </div>
+        <!-- Custom SVG -->
+        <div id="palleon-customsvg-upload" class="palleon-tab">
+            <div class="palleon-file-field">
+                <input type="file" name="palleon-element-upload" id="palleon-element-upload" class="palleon-hidden-file" accept="image/svg+xml" />
+                <label for="palleon-element-upload" class="palleon-btn primary palleon-lg-btn btn-full"><span class="material-icons">upload</span><span>Upload SVG from computer</span></label>
+            </div>
+            <button id="palleon-svg-media-library" type="button" class="palleon-btn primary palleon-lg-btn btn-full palleon-modal-open" data-target="#modal-svg-library"><span class="material-icons">photo_library</span>Select From Media Library</button>
+            <!-- Custom SVG Options -->
+            <div id="palleon-custom-svg-options">
+                <hr/>
+                <div class="palleon-control-wrap label-block">
+                    <div class="palleon-control">
+                        <div class="palleon-btn-group icon-group">
+                            <button id="customsvg-flip-horizontal" type="button" class="palleon-btn tooltip tooltip-top" data-title="Flip X"><span class="material-icons">flip</span></button>
+                            <button id="customsvg-flip-vertical" type="button" class="palleon-btn tooltip tooltip-top" data-title="Flip Y"><span class="material-icons">flip</span></button>
+                            <button type="button" class="palleon-horizontal-center palleon-btn tooltip tooltip-top" data-title="H-Align Center"><span class="material-icons">align_horizontal_center</span></button>
+                            <button type="button" class="palleon-vertical-center palleon-btn tooltip tooltip-top" data-title="V-Align Center"><span class="material-icons">vertical_align_center</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="palleon-control-wrap label-block">
+                    <label class="palleon-control-label slider-label">Opacity<span>1</span></label>
+                    <div class="palleon-control">
+                        <input id="customsvg-opacity" type="range" min="0" max="1" value="1" step="0.1" class="palleon-slider" autocomplete="off">
+                    </div>
+                </div>
+                <div class="palleon-control-wrap label-block">
+                    <label class="palleon-control-label slider-label">Skew X<span>0</span></label>
+                    <div class="palleon-control">
+                        <input id="customsvg-skew-x" type="range" min="0" max="180" value="0" step="1" class="palleon-slider" autocomplete="off">
+                    </div>
+                </div>
+                <div class="palleon-control-wrap label-block">
+                    <label class="palleon-control-label slider-label">Skew Y<span>0</span></label>
+                    <div class="palleon-control">
+                        <input id="customsvg-skew-y" type="range" min="0" max="180" value="0" step="1" class="palleon-slider" autocomplete="off">
+                    </div>
+                </div>
+                <div class="palleon-control-wrap label-block">
+                    <label class="palleon-control-label slider-label">Rotate<span>0</span></label>
+                    <div class="palleon-control">
+                        <input id="customsvg-rotate" type="range" min="0" max="360" value="0" step="1" class="palleon-slider" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Icons END -->

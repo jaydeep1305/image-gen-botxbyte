@@ -1,0 +1,111 @@
+<!-- Modal Media Library START -->
+<div id="modal-media-library" class="palleon-modal">
+    <div class="palleon-modal-close" data-target="#modal-media-library"><span class="material-icons">close</span>
+    </div>
+    <div class="palleon-modal-wrap">
+        <div class="palleon-modal-inner">
+            <div class="palleon-tabs">
+                <!-- Menu -->
+                <ul class="palleon-tabs-menu">
+                    <li class="active" data-target="#library-my-images"><span class="material-icons">photo_library</span>My Images</li>
+                    <li data-target="#library-all-images"><span class="material-icons">photo_library</span>Other Images
+                    </li>
+                </ul>
+                <!-- My Images -->
+                <div id="library-my-images" class="palleon-tab active">
+                    <div id="palleon-library-my-menu">
+                        <div>
+                            <form class="uploadImgToLibrary" enctype="multipart/form-data">
+                                <div class="palleon-file-field">
+                                    <input type="file" name="palleon-library-upload-img" id="palleon-library-upload-img" class="palleon-hidden-file" accept="image/png, image/jpeg" />
+                                    <label for="palleon-library-upload-img" class="palleon-btn primary"><span class="material-icons">upload</span><span>Upload Image</span></label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="palleon-search-box">
+                            <input type="search" class="palleon-form-field" placeholder="Search by title..." autocomplete="off" />
+                            <button id="palleon-library-my-search" type="button" class="palleon-btn primary"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                    <div id="palleon-library-my" class="palleon-grid media-library-grid paginated" data-perpage="18">
+                        
+                        {% set dummy_images = ["600x500", "600x600", "500x600", "600x360"] %}
+                        {% for dummy_image in dummy_images %}
+                        <div class="palleon-masonry-item" data-keyword="ipsum">
+                            <!-- <div class="palleon-library-delete" data-target="">
+                                <span class="material-icons">remove</span>
+                            </div> -->
+                            <div class="palleon-masonry-item-inner">
+                                <div class="palleon-img-wrap">
+                                    <div class="palleon-img-loader"></div>
+                                    <img class="lazy" 
+                                        data-src="https://dummyimage.com/{{ dummy_image }}/0035a8/fff" 
+                                        data-full="https://dummyimage.com/{{ dummy_image }}/0035a8/fff" 
+                                        data-filename="{{ dimension }}" title="{{ dummy_image }}" />
+                                </div>
+                                <div class="palleon-masonry-item-desc">{{ dummy_image }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                        {% set dummy_logos = ["250x150", "350x75", "400x100", "160x160", "110x110", "160x60"] %}
+                        {% for dummy_logo in dummy_logos %}
+                        <div class="palleon-masonry-item" data-keyword="ipsum">
+                            <!-- <div class="palleon-library-delete" data-target="">
+                                <span class="material-icons">remove</span>
+                            </div> -->
+                            <div class="palleon-masonry-item-inner">
+                                <div class="palleon-img-wrap">
+                                    <div class="palleon-img-loader"></div>
+                                    <img class="lazy" 
+                                        data-src="https://dummyimage.com/{{ dummy_logo }}/ff9d42/fff" 
+                                        data-full="https://dummyimage.com/{{ dummy_logo }}/ff9d42/fff" 
+                                        data-filename="{{ dimension }}" title="{{ dummy_logo }}" />
+                                </div>
+                                <div class="palleon-masonry-item-desc">{{ dummy_logo }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div id="palleon-library-my-noimg" class="notice notice-warning d-none">Nothing found.</div>
+                </div>
+                <!-- All Images -->
+                <div id="library-all-images" class="palleon-tab">
+                    <div id="palleon-library-all-menu">
+                        <div></div>
+                        <div class="palleon-search-box">
+                            <input type="search" class="palleon-form-field" placeholder="Search by title..." autocomplete="off" />
+                            <button id="palleon-library-all-search" type="button" class="palleon-btn primary"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                    <div id="palleon-library-all" class="palleon-grid media-library-grid paginated" data-perpage="18">
+                        <div class="palleon-masonry-item" data-keyword="lorem">
+                            <div class="palleon-library-delete" data-target=""><span class="material-icons">remove</span></div>
+                            <div class="palleon-masonry-item-inner">
+                                <div class="palleon-img-wrap">
+                                    <div class="palleon-img-loader"></div>
+                                    <img class="lazy" data-src="{{ url_for('static', filename='assets/placeholder.jpg') }}') }}" data-full="{{ url_for('static', filename='assets/placeholder-big.jpg') }}') }}" data-filename="Lorem" title="Lorem"
+                                    />
+                                </div>
+                                <div class="palleon-masonry-item-desc">Lorem ipsum dolor</div>
+                            </div>
+                        </div>
+                        <div class="palleon-masonry-item" data-keyword="ipsum">
+                            <div class="palleon-library-delete" data-target=""><span class="material-icons">remove</span></div>
+                            <div class="palleon-masonry-item-inner">
+                                <div class="palleon-img-wrap">
+                                    <div class="palleon-img-loader"></div>
+                                    <img class="lazy" data-src="{{ url_for('static', filename='assets/placeholder.jpg') }}') }}" data-full="{{ url_for('static', filename='assets/placeholder-big.jpg') }}') }}" data-filename="Lorem" title="Lorem"
+                                    />
+                                </div>
+                                <div class="palleon-masonry-item-desc">Lorem ipsum dolor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="palleon-library-all-noimg" class="notice notice-warning d-none"><strong>Nothing found.</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Media Library END -->

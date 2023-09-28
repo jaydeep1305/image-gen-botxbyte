@@ -1,0 +1,182 @@
+<!-- Modal Add New START -->
+<div id="modal-add-new" class="palleon-modal">
+    <div class="palleon-modal-close" data-target="#modal-add-new"><span class="material-icons">close</span></div>
+    <div class="palleon-modal-wrap">
+        <div class="palleon-modal-inner large">
+            <div class="palleon-tabs">
+                <!-- Menu -->
+                <ul class="palleon-tabs-menu">
+                    <!-- <li data-target="#modal-select-img"><span class="material-icons">file_upload</span>New Image</li> -->
+                    <li data-target="#modal-template-library"><span class="material-icons">photo_library</span>Template Library</li>
+                    <!-- <li data-target="#modal-my-templates"><span class="material-icons">photo_library</span>My Templates</li> -->
+                    <li class="active" data-target="#modal-blank-canvas"><span class="material-icons">crop_original</span>Blank Canvas</li>
+                </ul>
+                <!-- New Image -->
+                <div id="modal-select-img" class="palleon-tab">
+                    <div class="palleon-select-btn-block">
+                        <div>
+                            <div class="palleon-btn-set">
+                                <div class="palleon-file-field">
+                                    <input type="file" name="palleon-image-upload" id="palleon-image-upload" class="palleon-hidden-file" accept="image/png, image/jpeg" />
+                                    <label for="palleon-image-upload" class="palleon-btn primary palleon-lg-btn"><span class="material-icons">upload</span><span>Upload Image</span></label>
+                                </div>
+                                <button id="palleon-media-library" type="button" class="palleon-btn primary palleon-lg-btn palleon-modal-open" data-target="#modal-media-library"><span class="material-icons">photo_library</span>Select From Media Library
+                                </button>
+                            </div>
+                            <div class="palleon-keep">
+                                <label class="palleon-checkbox">
+                                    <input id="keep-data" type="checkbox" autocomplete="off">
+                                    <span class="palleon-checkmark"></span>
+                                </label>
+                                <div>Keep current objects and filters</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="palleon-file-field">
+                                <input type="file" name="palleon-json-upload" id="palleon-json-upload" class="palleon-hidden-file" accept=".json') }},application/JSON" />
+                                <label for="palleon-json-upload" class="palleon-btn primary palleon-lg-btn"><span class="material-icons">upload</span><span>Upload Template</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Template Library -->
+                <div id="modal-template-library" class="palleon-tab">
+                    <div class="palleon-templates-wrap">
+                        <div class="palleon-tabs">
+                            <ul class="palleon-tabs-menu">
+                                <li class="active" data-target="#palleon-all-templates">All</li>
+                                <!-- <li data-target="#palleon-templates-favorites">My Favorites</li> -->
+                            </ul>
+                            <div id="palleon-all-templates" class="palleon-tab active">
+                                <div class="palleon-templates-menu-wrap">
+                                    <input id="palleon-template-search-keyword" type="search" class="palleon-form-field" placeholder="Search by keyword..." autocomplete="off" />
+                                    <select id="palleon-templates-menu" class="palleon-select palleon-select2" autocomplete="off">
+                                        <option value="all" selected>All Categories</option>
+                                        {% for tag in tags %}
+                                            <option value="{{tag.tag_name}}">{{tag.tag_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <button id="palleon-template-search" type="button" class="palleon-btn primary"><span class="material-icons">search</span></button>
+                                </div>
+                                <div class="palleon-templates-content">
+                                    <div class="palleon-grid-wrap">
+                                        <div id="palleon-all-templates-noimg" class="notice notice-warning d-none">Nothing found.</div>
+                                        <div id="palleon-templates-grid" class="palleon-grid template-grid template-selection paginated" data-perpage="21">
+                                            {% for template in templates %}
+                                            <div class="grid-item" data-keyword="{{ template.template_name }}" data-category="{{ template.tag_names }}">
+                                                <div class="template-favorite">
+                                                    <button type="button" class="palleon-btn-simple star" data-templateid=""><span class="material-icons">star_border</span></button>
+                                                </div>
+                                                <div class="palleon-masonry-item-inner palleon-select-template" data-json="{{ url_for('template', template_id=template.template_id) }}" data-title="{{template.template_name}}" data-image_tags = '{{template.tags | tojson}}'>
+                                                    <div class="palleon-img-wrap">
+                                                        <div class="palleon-img-loader"></div>
+                                                        <img class="lazy" data-src="{{ template.template_image_path }}" title="{{ template.template_name }}"/>
+                                                    </div>
+                                                    <div class="palleon-masonry-item-desc">
+                                                        {{ template.template_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="palleon-templates-favorites" class="palleon-tab">
+                                <div class="palleon-grid template-grid template-selection paginated" data-perpage="21">
+                                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                                        <div class="template-favorite">
+                                            <button type="button" class="palleon-btn-simple star" data-templateid=""><span class="material-icons">star</span></button>
+                                        </div>
+                                        <div class="palleon-masonry-item-inner palleon-select-template" data-json="{{ url_for('static', filename='files/templates/json/25.json') }}">
+                                            <div class="palleon-img-wrap">
+                                                <div class="palleon-img-loader"></div>
+                                                <img class="lazy" data-src="{{ url_for('static', filename='files/templates/img/25.jpg') }}" title="Blog Banner - 2240x1260px" />
+                                            </div>
+                                            <div class="palleon-masonry-item-desc">Blog Banner - 2240x1260px</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item" data-keyword="Modern Collage - 2 Photos - 2000x1300px" data-category="collage">
+                                        <div class="template-favorite">
+                                            <button type="button" class="palleon-btn-simple star" data-templateid=""><span class="material-icons">star</span></button>
+                                        </div>
+                                        <div class="palleon-masonry-item-inner palleon-select-template" data-json="{{ url_for('static', filename='files/templates/json/20.json') }}">
+                                            <div class="palleon-img-wrap">
+                                                <div class="palleon-img-loader"></div>
+                                                <img class="lazy" data-src="{{ url_for('static', filename='files/templates/img/20.jpg') }}" title="Modern Collage - 2 Photos - 2000x1300px" />
+                                            </div>
+                                            <div class="palleon-masonry-item-desc"> Modern Collage - 2 Photos - 2000x1300px</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- My Templates -->
+                <div id="modal-my-templates" class="palleon-tab">
+                    <div id="palleon-my-templates-menu">
+                        <div></div>
+                        <div class="palleon-search-box">
+                            <input type="search" class="palleon-form-field" placeholder="Search by title..." autocomplete="off" />
+                            <button id="palleon-my-templates-search" type="button" class="palleon-btn primary"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                    <ul id="palleon-my-templates" class="palleon-template-list template-selection paginated" data-perpage="10">
+                        <li data-keyword="my template 1">
+                            <div>My Template 1</div>
+                            <div>
+                                <button type="button" class="palleon-btn primary palleon-select-template" data-json="{{ url_for('static', filename='files/templates/json/1.json') }}"><span class="material-icons">check</span>Select</button>
+                                <button type="button" class="palleon-btn danger palleon-template-delete" data-target="{{ url_for('static', filename='files/templates/json/1.json') }}"><span class="material-icons">clear</span>Delete</button>
+                            </div>
+                        </li>
+                        <li data-keyword="my template 2">
+                            <div>My Template 2</div>
+                            <div>
+                                <button type="button" class="palleon-btn primary palleon-select-template" data-json="{{ url_for('static', filename='files/templates/json/2.json') }}"><span class="material-icons">check</span>Select</button>
+                                <button type="button" class="palleon-btn danger palleon-template-delete" data-target="{{ url_for('static', filename='files/templates/json/1.json') }}"><span class="material-icons">clear</span>Delete</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <div id="palleon-my-templates-noimg" class="notice notice-warning d-none">Nothing found.</div>
+                </div>
+                <!-- Blank Canvas -->
+                <div id="modal-blank-canvas" class="palleon-tab active">
+                    <div class="palleon-control-group">
+                        <div>
+                            <label>Size</label>
+                            <select id="palleon-canvas-size-select" class="palleon-select" autocomplete="off">
+                                <option selected value="custom">Custom</option>
+                                <option value="blog-banner">Blog Banner</option>
+                                <option value="fb-cover">Facebook Cover</option>
+                                <option value="fb-ad">Facebook Ad</option>
+                                <option value="instagram">Instagram Post</option>
+                                <option value="pinterest">Pinterest Post</option>
+                                <option value="fb-post">Facebook Post</option>
+                                <option value="twitter-post">Twitter Post</option>
+                                <option value="youtube">Youtube Thumbnail</option>
+                                <option value="wallpaper">Wallpaper</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Width</label>
+                            <input id="palleon-canvas-width" class="palleon-form-field" type="number" value="1280" data-min="1" data-max="10000" autocomplete="off">
+                        </div>
+                        <div>
+                            <label>Height</label>
+                            <input id="palleon-canvas-height" class="palleon-form-field" type="number" value="675" data-min="1" data-max="10000" autocomplete="off">
+                        </div>
+                        <div>
+                            <label>Background</label>
+                            <input id="palleon-canvas-color" type="text" class="palleon-colorpicker allow-empty" autocomplete="off" value="" />
+                        </div>
+                        <div>
+                            <button id="palleon-canvas-create" type="button" class="palleon-btn primary"><span class="material-icons">done</span>Create</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Add New END -->

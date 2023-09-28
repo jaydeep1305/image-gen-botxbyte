@@ -1,0 +1,52 @@
+<!-- Settings START -->
+<div id="palleon-settings" class="palleon-icon-panel-content panel-hide">
+    <div class="palleon-control-wrap control-text-color">
+        <label class="palleon-control-label">Canvas Background</label>
+        <div class="palleon-control">
+            <input id="custom-image-background" type="text" class="palleon-colorpicker allow-empty" autocomplete="off" value="" />
+        </div>
+    </div>
+    <hr />
+    <h5>Preferences</h5>
+    <div id="palleon-preferences">
+        <div class="palleon-control-wrap label-block">
+            <label class="palleon-control-label slider-label">Font Size<span>14</span></label>
+            <div class="palleon-control">
+                <input id="custom-font-size" type="range" min="10" max="18" value="14" step="1" class="palleon-slider preference" autocomplete="off">
+            </div>
+        </div>
+        <div class="palleon-control-wrap">
+            <label class="palleon-control-label">Theme</label>
+            <div class="palleon-control">
+                <select id="custom-theme" class="palleon-select preference" autocomplete="off">
+                    <option value="dark" selected>Dark</option>
+                    <option value="light">Light</option>
+                </select>
+            </div>
+        </div>
+        <div class="palleon-control-wrap control-text-color">
+            <label class="palleon-control-label">Background</label>
+            <div class="palleon-control">
+                <input id="custom-background" type="text" class="palleon-colorpicker allow-empty preference" autocomplete="off" value="" />
+            </div>
+        </div>
+        <div class="palleon-control-wrap control-text-color">
+                <label class="palleon-control-label">Ruler Guide Color</label>
+                <div class="palleon-control">
+                    <input id="ruler-guide-color" type="text" class="palleon-colorpicker allow-empty preference" autocomplete="off" value="#6658ea" />
+                </div>
+            </div>
+            <div class="palleon-control-wrap label-block">
+                <label class="palleon-control-label slider-label">Ruler Guide Size<span>1</span></label>
+                <div class="palleon-control">
+                    <input id="ruler-guide-size" type="range" min="1" max="10" value="1" step="1" class="palleon-slider preference" autocomplete="off">
+                </div>
+            </div>
+    </div>
+    <div class="palleon-control-wrap label-block">
+        <div class="palleon-control">
+            <button id="palleon-preferences-save" type="button" class="palleon-btn palleon-lg-btn btn-full primary">Save Preferences</button>
+        </div>
+    </div>
+</div>
+<!-- Settings END -->

@@ -1,0 +1,69 @@
+<!-- QR Code START -->
+<div id="palleon-qrcode" class="palleon-icon-panel-content panel-hide">
+    <div id="palleon-qrcode-settings">
+        <div class="palleon-control-wrap label-block">
+            <label class="palleon-control-label">Text</label>
+            <div class="palleon-control">
+                <input type="text" id="palleon-qrcode-text" class="palleon-form-field" autocomplete="off" value="https://mysite.com" />
+            </div>
+        </div>
+        <div class="palleon-control-wrap">
+            <label class="palleon-control-label">Size</label>
+            <div class="palleon-control">
+                <input id="palleon-qrcode-size" class="palleon-form-field" type="number" value="300" autocomplete="off">
+            </div>
+        </div>
+        <div class="palleon-control-wrap control-text-color">
+            <label class="palleon-control-label">Fill Color</label>
+            <div class="palleon-control">
+                <input id="palleon-qrcode-fill" type="text" class="palleon-colorpicker disallow-empty" autocomplete="off" value="#333333" />
+            </div>
+        </div>
+        <div class="palleon-control-wrap control-text-color">
+            <label class="palleon-control-label">Background Color</label>
+            <div class="palleon-control">
+                <input id="palleon-qrcode-back" type="text" class="palleon-colorpicker disallow-empty" autocomplete="off" value="#FFFFFF" />
+            </div>
+        </div>
+        <div class="palleon-control-wrap label-block">
+            <label class="palleon-control-label slider-label">Rounded Corners<span>0</span></label>
+            <div class="palleon-control">
+                <input id="palleon-qrcode-rounded" type="range" min="0" max="100" value="0" step="1" class="palleon-slider" autocomplete="off">
+            </div>
+        </div>
+        <hr/>
+        <div class="palleon-control-wrap label-block">
+            <label class="palleon-control-label">Label</label>
+            <div class="palleon-control">
+                <input type="text" id="palleon-qrcode-label" class="palleon-form-field" autocomplete="off" value="" />
+            </div>
+        </div>
+        <div class="palleon-control-wrap control-text-color">
+            <label class="palleon-control-label">Label Color</label>
+            <div class="palleon-control">
+                <input id="palleon-qrcode-label-color" type="text" class="palleon-colorpicker disallow-empty" autocomplete="off" value="#333333" />
+            </div>
+        </div>
+        <div class="palleon-control-wrap label-block">
+            <label class="palleon-control-label slider-label">Label Size<span>30</span></label>
+            <div class="palleon-control">
+                <input id="palleon-qrcode-label-size" type="range" min="0" max="100" value="30" step="1" class="palleon-slider" autocomplete="off">
+            </div>
+        </div>
+        <div class="palleon-control-wrap label-block">
+            <label class="palleon-control-label slider-label">Label Position X<span>50</span></label>
+            <div class="palleon-control">
+                <input id="palleon-qrcode-label-position-x" type="range" min="0" max="100" value="50" step="1" class="palleon-slider" autocomplete="off">
+            </div>
+        </div>
+        <div class="palleon-control-wrap label-block">
+            <label class="palleon-control-label slider-label">Label Position Y<span>50</span></label>
+            <div class="palleon-control">
+                <input id="palleon-qrcode-label-position-y" type="range" min="0" max="100" value="50" step="1" class="palleon-slider" autocomplete="off">
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <button id="palleon-generate-qr-code" type="button" class="palleon-btn primary palleon-lg-btn btn-full"><span class="material-icons">qr_code</span>Generate QR Code</button>
+</div>
+<!-- QR Code END -->

@@ -1,0 +1,444 @@
+<!-- Adjust START -->
+<div id="palleon-adjust" class="palleon-icon-panel-content">
+    <ul class="palleon-accordion">
+        <!-- Crop -->
+        <li class="accordion-crop hide-on-canvas-mode">
+            <a href="#"><span class="material-icons accordion-icon">crop</span>Crop<span class="material-icons arrow">keyboard_arrow_down</span></a>
+            <div>
+                <div class="palleon-control-wrap label-block">
+                    <div class="palleon-control">
+                        <select id="palleon-crop-style" class="palleon-select palleon-select2" autocomplete="off">
+                            <option value="">Please select</option>
+                            <option value="freeform" data-icon="crop_free">Freeform</option>
+                            <option value="custom" data-icon="crop">Custom</option>
+                            <option value="square" data-icon="crop_square">Square</option>
+                            <option value="original" data-icon="crop_original">Original Ratio</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="palleon-control-wrap palleon-resize-wrap crop-custom">
+                    <input id="palleon-crop-width" class="palleon-form-field" type="number" value="" data-max="" autocomplete="off">
+                    <span class="material-icons">clear</span>
+                    <input id="palleon-crop-height" class="palleon-form-field" type="number" value="" data-max="" autocomplete="off">
+                    <button id="palleon-crop-lock" type="button" class="palleon-btn palleon-lock-unlock hide-on-canvas-mode active"><span class="material-icons">lock</span></button>
+                </div>
+                <div id="palleon-crop-btns" class="palleon-control-wrap palleon-submit-btns disabled">
+                    <button id="palleon-crop-apply" type="button" class="palleon-btn primary">Apply</button>
+                    <button id="palleon-crop-cancel" type="button" class="palleon-btn">Cancel</button>
+                </div>
+            </div>
+        </li>
+        <!-- Rotate -->
+        <li>
+            <a href="#"><span class="material-icons accordion-icon">refresh</span>Rotate<span class="material-icons arrow">keyboard_arrow_down</span></a>
+            <div>
+                <div class="palleon-control-wrap label-block">
+                    <div class="palleon-control">
+                        <div class="palleon-btn-group icon-group">
+                            <button id="palleon-rotate-right" type="button" class="palleon-btn tooltip" data-title="Rotate Right"><span class="material-icons">rotate_right</span></button>
+                            <button id="palleon-rotate-left" type="button" class="palleon-btn tooltip" data-title="Rotate Left"><span class="material-icons">rotate_left</span></button>
+                            <button id="palleon-flip-horizontal" type="button" class="palleon-btn tooltip" data-title="Flip X"><span class="material-icons">flip</span></button>
+                            <button id="palleon-flip-vertical" type="button" class="palleon-btn tooltip" data-title="Flip Y"><span class="material-icons">flip</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- Resize -->
+        <li>
+            <a href="#"><span class="material-icons accordion-icon">aspect_ratio</span>Resize<span class="material-icons arrow">keyboard_arrow_down</span></a>
+            <div>
+                <div class="palleon-resize-wrap">
+                    <input id="palleon-resize-width" class="palleon-form-field" type="number" value="" data-size="" autocomplete="off">
+                    <span class="material-icons">clear</span>
+                    <input id="palleon-resize-height" class="palleon-form-field" type="number" value="" data-size="" autocomplete="off">
+                    <button id="palleon-resize-lock" type="button" class="palleon-btn palleon-lock-unlock active"><span class="material-icons">lock</span></button>
+                </div>
+                <button id="palleon-resize-apply" type="button" class="palleon-btn btn-full primary">Apply</button>
+            </div>
+        </li>
+    </ul>
+    <hr class="hide-on-canvas-mode" />
+    <ul class="palleon-accordion hide-on-canvas-mode">
+        <!-- Quick Filters -->
+        <li>
+            <a href="#"><span class="material-icons accordion-icon">auto_fix_high</span>Quick Filters<span class="material-icons arrow">keyboard_arrow_down</span></a>
+            <div>
+                <div id="palleon-filters" class="palleon-grid two-column">
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="grayscale" autocomplete="off" class="input-hidden" />
+                        <label for="grayscale"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/grayscale.png') }}" /><span>Grayscale</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="sepia" autocomplete="off" class="input-hidden" />
+                        <label for="sepia"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/sepia.png') }}" /><span>Sepia</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="blackwhite" autocomplete="off" class="input-hidden" />
+                        <label for="blackwhite"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/blackwhite.png') }}" /><span>Black/White</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="brownie" autocomplete="off" class="input-hidden" />
+                        <label for="brownie"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/brownie.png') }}" /><span>Brownie</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="vintage" autocomplete="off" class="input-hidden" />
+                        <label for="vintage"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/vintage.png') }}" /><span>Vintage</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="kodachrome" autocomplete="off" class="input-hidden" />
+                        <label for="kodachrome"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/kodachrome.png') }}" /><span>Kodachrome</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="technicolor" autocomplete="off" class="input-hidden" />
+                        <label for="technicolor"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/technicolor.png') }}" /><span>Technicolor</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="polaroid" autocomplete="off" class="input-hidden" />
+                        <label for="polaroid"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/polaroid.png') }}" /><span>Polaroid</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="shift" autocomplete="off" class="input-hidden" />
+                        <label for="shift"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/shift.png') }}" /><span>Shift</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="invert" autocomplete="off" class="input-hidden" />
+                        <label for="invert"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/invert.png') }}" /><span>Invert</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="sharpen" autocomplete="off" class="input-hidden" />
+                        <label for="sharpen"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/sharpen.png') }}" /><span>Sharpen</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="emboss" autocomplete="off" class="input-hidden" />
+                        <label for="emboss"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/emboss.png') }}" /><span>Emboss</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="sobelX" autocomplete="off" class="input-hidden" />
+                        <label for="sobelX"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/sobelX.png') }}" /><span>SobelX</span></label>
+                    </div>
+                    <div class="grid-item" data-keyword="Blog Banner - 2240x1260px" data-category="blog-banners">
+                        <input type="checkbox" name="palleon-filter" id="sobelY" autocomplete="off" class="input-hidden" />
+                        <label for="sobelY"><img class="lazy" data-src="{{ url_for('static', filename='assets/filters/sobelY.png') }}" /><span>SobelY</span></label>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- Basic Adjust -->
+        <li>
+            <a href="#"><span class="material-icons accordion-icon">tune</span>Basic Adjust<span class="material-icons arrow">keyboard_arrow_down</span></a>
+            <div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Adjust Brightness</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-brightness" class="palleon-toggle-checkbox" data-conditional="#palleon-brightness-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-brightness-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Brightness<span>0</span></label>
+                        <div class="palleon-control">
+                            <input id="brightness" type="range" min="-1" max="1" value="0" step="0.01" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Adjust Contrast</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-contrast" class="palleon-toggle-checkbox" data-conditional="#palleon-contrast-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-contrast-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Contrast<span>0</span></label>
+                        <div class="palleon-control">
+                            <input id="contrast" type="range" min="-1" max="1" value="0" step="0.01" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Adjust Saturation</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-saturation" class="palleon-toggle-checkbox" data-conditional="#palleon-saturation-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-saturation-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Saturation<span>0</span></label>
+                        <div class="palleon-control">
+                            <input id="saturation" type="range" min="-1" max="1" value="0" step="0.01" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Adjust Hue</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-hue" class="palleon-toggle-checkbox" data-conditional="#palleon-hue-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-hue-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Hue<span>0</span></label>
+                        <div class="palleon-control">
+                            <input id="hue" type="range" min="-2" max="2" value="0" step="0.02" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- Gamma -->
+        <li>
+            <a href="#"><span class="material-icons accordion-icon">wb_sunny</span>Gamma<span class="material-icons arrow">keyboard_arrow_down</span></a>
+            <div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Adjust Gamma</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-gamma" class="palleon-toggle-checkbox" data-conditional="#palleon-gamma-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-gamma-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Red<span>1</span></label>
+                        <div class="palleon-control">
+                            <input id="gamma-red" type="range" min="0.2" max="2.2" value="1" step="0.01" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Green<span>1</span></label>
+                        <div class="palleon-control">
+                            <input id="gamma-green" type="range" min="0.2" max="2.2" value="1" step="0.01" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Blue<span>1</span></label>
+                        <div class="palleon-control">
+                            <input id="gamma-blue" type="range" min="0.2" max="2.2" value="1" step="0.01" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- Blend Color -->
+        <li>
+            <a href="#"><span class="material-icons accordion-icon">palette</span>Blend Color<span class="material-icons arrow">keyboard_arrow_down</span></a>
+            <div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Blend Color</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-blend-color" class="palleon-toggle-checkbox" data-conditional="#palleon-blend-color-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-blend-color-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap">
+                        <label class="palleon-control-label">Mode</label>
+                        <div class="palleon-control">
+                            <select id="blend-color-mode" class="palleon-select" autocomplete="off">
+                                <option selected value="add">Add</option>
+                                <option value="diff">Diff</option>
+                                <option value="subtract">Subtract</option>
+                                <option value="multiply">Multiply</option>
+                                <option value="screen">Screen</option>
+                                <option value="lighten">Lighten</option>
+                                <option value="darken">Darken</option>
+                                <option value="overlay">Overlay</option>
+                                <option value="exclusion">Exclusion</option>
+                                <option value="tint">Tint</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="palleon-control-wrap">
+                        <label class="palleon-control-label">Color</label>
+                        <div class="palleon-control">
+                            <input id="blend-color-color" type="text" class="palleon-colorpicker disallow-empty" autocomplete="off" value="#ffffff" />
+                        </div>
+                    </div>
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Alpha<span>0.5</span></label>
+                        <div class="palleon-control">
+                            <input id="blend-color-alpha" type="range" min="0" max="1" value="0.5" step="0.01" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- Duotone Effect -->
+        <li>
+            <a href="#"><span class="material-icons accordion-icon">swap_horiz</span>Duotone Effect<span class="material-icons arrow">keyboard_arrow_down</span></a>
+            <div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Adjust Duotone</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-duotone-color" class="palleon-toggle-checkbox" data-conditional="#palleon-duotone-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-duotone-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap">
+                        <label class="palleon-control-label">Light Color</label>
+                        <div class="palleon-control">
+                            <input id="duotone-light-color" type="text" class="palleon-colorpicker disallow-empty" autocomplete="off" value="green" />
+                        </div>
+                    </div>
+                    <div class="palleon-control-wrap">
+                        <label class="palleon-control-label">Dark Color</label>
+                        <div class="palleon-control">
+                            <input id="duotone-dark-color" type="text" class="palleon-colorpicker disallow-empty" autocomplete="off" value="blue" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- Swap Colors -->
+        <li>
+            <a href="#"><span class="material-icons accordion-icon">swap_horiz</span>Swap Colors<span
+                    class="material-icons arrow">keyboard_arrow_down</span></a>
+            <div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Swap Colors</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-swap-colors" class="palleon-toggle-checkbox" data-conditional="#palleon-swap-colors-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-swap-colors-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap control-text-color">
+                        <label class="palleon-control-label">Source</label>
+                        <div class="palleon-control">
+                            <input id="color-source" type="text" class="palleon-colorpicker disallow-empty" autocomplete="off" value="#ffffff" />
+                        </div>
+                    </div>
+                    <div class="palleon-control-wrap control-text-color">
+                        <label class="palleon-control-label">Destination</label>
+                        <div class="palleon-control">
+                            <input id="color-destination" type="text" class="palleon-colorpicker disallow-empty" autocomplete="off" value="#000000" />
+                        </div>
+                    </div>
+                    <div class="palleon-control-wrap label-block">
+                        <div class="palleon-control">
+                            <div class="palleon-btn-set">
+                                <button id="palleon-swap-apply" type="button" class="palleon-btn primary">Apply</button>
+                                <button id="palleon-swap-remove" type="button" class="palleon-btn" autocomplete="off" disabled><span class="material-icons">delete</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- Advanced Edits -->
+        <li>
+            <a href="#"><span class="material-icons accordion-icon">tune</span>Advanced Edits<span
+                    class="material-icons arrow">keyboard_arrow_down</span></a>
+            <div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Adjust Blur</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-blur" class="palleon-toggle-checkbox" data-conditional="#palleon-blur-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-blur-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Blur<span>0</span></label>
+                        <div class="palleon-control">
+                            <input id="blur" type="range" min="0" max="1" value="0" step="0.01" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Adjust Noise</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-noise" class="palleon-toggle-checkbox" data-conditional="#palleon-noise-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-noise-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Noise<span>0</span></label>
+                        <div class="palleon-control">
+                            <input id="noise" type="range" min="0" max="1000" value="0" step="1" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="palleon-control-wrap conditional">
+                    <label class="palleon-control-label">Adjust Pixelate</label>
+                    <div class="palleon-control palleon-toggle-control">
+                        <label class="palleon-toggle">
+                            <input id="palleon-pixelate" class="palleon-toggle-checkbox" data-conditional="#palleon-pixelate-settings" type="checkbox" autocomplete="off" />
+                            <div class="palleon-toggle-switch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="palleon-pixelate-settings" class="d-none conditional-settings">
+                    <div class="palleon-control-wrap label-block">
+                        <label class="palleon-control-label slider-label">Pixelate<span>1</span></label>
+                        <div class="palleon-control">
+                            <input id="pixelate" type="range" min="1" max="20" value="1" step="1" class="palleon-slider" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="palleon-text-wrap"> 
+        <div class="palleon-control-wrap label-block">
+            <label class="palleon-control-label">Image Tags</label>
+            <div class="palleon-control">
+                <style>
+                    .select2-search__field{
+                        width: 100% !important; 
+                        height: 30px !important;
+                        background-color: #212121 !important;
+
+                    }
+                    .select2-selection__choice {
+                        background: #212121;
+                        border: 1px solid #212121;
+                        border-radius: 20px;
+                        cursor: default;
+                        float: left;
+                        margin: 5px;
+                        padding: 0 10px;
+                        background-color: #212121;
+                    }
+                    .select2-selection__choice__remove{
+                        float: right;
+                        padding-left: 3px;
+                        color: red;
+                    }
+                </style>
+                <select id="palleon-image-tags" class="palleon-select palleon-select2" style="width: 100%" multiple="multiple">
+                    {% for tag in tags %}
+                        <option value="{{ tag.tag_name }}">{{ tag.tag_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Adjust END -->

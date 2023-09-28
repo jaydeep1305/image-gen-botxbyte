@@ -1,0 +1,43 @@
+<!-- Body START -->
+<div id="palleon-body">
+    <div class="palleon-wrap">
+        <div id="palleon-ruler" class="palleon-inner-wrap">
+            <!-- Ruler -->
+            <div id="palleon-ruler-icon" class="closed" title="Ruler Menu"></div>
+            <!-- Canvas Content START -->
+            <div id="palleon-content" class="">
+                <!-- Canvas Image -->
+                <div id="palleon-canvas-img-wrap">
+                    <img id="palleon-canvas-img" src="" data-filename="" data-template="" />
+                    <!-- 
+                        Don't remove img element! To open the editor with a default image, you can update it like the following; 
+                        <img id="palleon-canvas-img" src="assets/placeholder-big.jpg" data-filename="placeholder" data-template="" />
+                        To open the editor with a default template, you can update it like the following; 
+                        <img id="palleon-canvas-img" src="" data-filename="template" data-template="files/templates/json/25.json" /> 
+                    -->
+                </div>
+                <div id="palleon-canvas-wrap">
+                    <!-- Canvas Loader -->
+                    <div id="palleon-canvas-overlay"></div>
+                    <div id="palleon-canvas-loader">
+                        <div class="palleon-loader"></div>
+                    </div>
+                    <!-- Canvas - Don't remove canvas element! -->
+                    <canvas id="palleon-canvas"></canvas>
+                </div>
+                <!-- Zoom & Pan Buttons -->
+                <div class="palleon-content-bar">
+                    <div class="palleon-img-size"><span id="palleon-img-width">0</span>px<span class="material-icons">clear</span><span id="palleon-img-height">0</span>px</div>
+                    <button id="palleon-img-drag" class="palleon-btn"><span class="material-icons">pan_tool</span></button>
+                    <div id="palleon-img-zoom-counter" class="palleon-counter">
+                        <button id="palleon-img-zoom-out" class="counter-minus palleon-btn"><span class="material-icons">remove</span></button>
+                        <input id="palleon-img-zoom" class="palleon-form-field numeric-field" type="text" value="100" autocomplete="off" data-min="10" data-max="200" data-step="5">
+                        <button id="palleon-img-zoom-in" class="counter-plus palleon-btn"><span class="material-icons">add</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Canvas Content END -->
+        </div>
+    </div>
+</div>
+<!-- Body END -->

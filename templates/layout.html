@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/select2.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/spectrum.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/ruler.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/toastr.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+    <link id="palleon-theme-link" href="{{ url_for('static', filename='css/dark.css') }}" rel="stylesheet" type="text/css">
+    <!-- <link id="palleon-theme-link" href="css/light.css" rel="stylesheet" type="text/css"> -->
+</head>
+
+<body id="palleon" class="backend">
+    
+    {% include 'palleon/page-loader.html' %}
+    {% include 'palleon/topbar.html' %}
+    {% include 'palleon/icon-menu.html' %}
+    {% with templates=data['templates'], tags=data['tags'] %}
+        {% include 'palleon/icon-panel.html' %}
+    {% endwith %}
+    {% include 'palleon/body.html' %}
+    {% include 'palleon/right-column.html' %}
+    
+    {% with templates=data['templates'], tags=data['tags'] %}
+        {% include 'palleon/modal/add.html' %}
+    {% endwith %}
+    
+    {% include 'palleon/modal/save.html' %}
+    {% include 'palleon/modal/media.html' %}
+    {% include 'palleon/modal/svg-library.html' %}
+    {% include 'palleon/modal/history.html' %}
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/unminified/fabric.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/plugins.min.js') }}"></script>    
+    <script src="{{ url_for('static', filename='js/unminified/palleon.js') }}"></script>
+     <!-- Canvas Ruler -->
+    <script type="text/javascript">
+        if (document.body.clientWidth >= 1200) {
+            var evt = new Event('palleon-ruler'),
+            dragdrop = new Dragdrop(evt),
+            rg  = new RulersGuides(evt, dragdrop, document.getElementById("palleon-ruler"));
+        }
+    </script>
+    <script src="https://unpkg.com/imagekit-javascript@1.3.0/dist/imagekit.min.js"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    <!-- Translation Strings -->
+    <script>
+        /* <![CDATA[ */
+        var palleonParams = {
+            "textbox": "Enter Your Text Here",
+            "object": "Object",
+            "loading": "Loading...",
+            "loadmore": "Load More",
+            "saved": "Saved!",
+            "imgsaved": "Image is saved.",
+            "tempsaved": "Template is saved.",
+            "freeDrawing": "Free drawing",
+            "frame": "Frame",
+            "image": "Image",
+            "circle": "Circle",
+            "square": "Square",
+            "rectangle": "Rectangle",
+            "triangle": "Triangle",
+            "ellipse": "Ellipse",
+            "trapezoid": "Trapezoid",
+            "pentagon":"Pentagon",
+            "octagon":"Octagon",
+            "emerald": "Emerald",
+            "star": "Star",
+            "element": "Element",
+            "customSvg": "Custom SVG",
+            "success": "Success",
+            "error": "Error",
+            "delete": "Delete",
+            "duplicate": "Duplicate",
+            "showhide": "Show/Hide",
+            "lockunlock": "Lock/Unlock",
+            "text": "Text",
+            "started": "Editing started.",
+            "added": "added.",
+            "removed": "removed.",
+            "resized": "resized.",
+            "edited": "edited.",
+            "replaced": "replaced.",
+            "rotated": "rotated.",
+            "moved": "moved.",
+            "scaled": "scaled.",
+            "flipped": "flipped.",
+            "cropped": "cropped.",
+            "bg": "Canvas",
+            "filter": "filter",
+            "showRulers":"Show rulers",
+            "hideRulers":"Hide rulers",
+            "showGuides":"Show guides",
+            "hideGuides":"Hide guides",
+            "clearAllGuides":"Clear all guides",
+            "question1":"Are you sure you want clear the history?",
+            "question2":"Are you sure you want to delete the layers?",
+            "question3":"Are you sure you want to crop the image?",
+            "question4":"Are you sure you want to resize the image?",
+            "noDuplicate":"You can not duplicate multiple objects. Please select single object to duplicate.",
+            "warning": "Warning",
+            "qrCode": "QR Code",
+        };
+        /* ]]> */
+    </script>
+    <!-- Scripts END -->
+</body>
+<!-- Body END -->
+
+</html>
