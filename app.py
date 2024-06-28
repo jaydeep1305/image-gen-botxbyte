@@ -318,7 +318,6 @@ def load_tags_templates_mapping():
         return {"success": False, "message": str(ex)}
     return {"success": False, "message": "Error load tempaltes."}
 
-
 @app.route('/')
 def home():
     tags_templates_mapping = load_tags_templates_mapping()
