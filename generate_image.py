@@ -99,10 +99,11 @@ class GenerateImage:
                 images_result = images_result['image_results'][15:]
                 random.shuffle(images_result)
                 for image_data in images_result:
-                    if image_data['width'] < 700 or image_data['height'] < 700:
-                        continue
+                    # if image_data['width'] < 700 or image_data['height'] < 500:
+                    #     continue
                     return_images.append(image_data['image'])
                 # logger.debug(images_result)
+                # logger.debug(return_images)
                 return {"keyword": keyword, "original_image_urls": return_images}
             except Exception as ex:
                 logger.error(f"valueserp - try {try_count} - {ex}")
